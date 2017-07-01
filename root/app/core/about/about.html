@@ -1,0 +1,19 @@
+<ol class="breadcrumb">
+  <li><a href="/home">Home</a></li>
+  <li class="active">About Me</li>
+</ol>
+<h1><u>About Me</u><h1>
+<div class="row" ng-show="ac.visible">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Name:</div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ac.name}}</div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Gender:</div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ac.gender}}</div>
+</div>
+<div class="row" ng-show="ac.visible">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Repo <i class="fa fa-github-alt" aria-hidden="true"></i> :</div>
+  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">{{ac.repo}}</div>
+</div>
+<div class="row">
+  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+  <button type="button" class="btn btn-primary" ng-click="ac.toggleVisible()">{{ac.buttonText}}</button>
+</div>

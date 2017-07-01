@@ -1,0 +1,16 @@
+
+
+{
+  "browser": true,
+  "camelcase": false,
+  "esnext": true,
+  "indent": 2,
+  "latedef": false,
+  "newcap": true,
+  "quotmark": "single",
+  "node": true,
+  "globals": {
+    "angular": true,
+    "console": true
+  }
+}
