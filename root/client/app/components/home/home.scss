@@ -1,0 +1,21 @@
+.dynamic-directive {
+  .breadcrumb {
+    margin-top: 60px;
+  }
+
+  .item-type {
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    padding: 10px;
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+}

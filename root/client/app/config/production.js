@@ -1,4 +1,4 @@
-export default (appModule) => {
+export const config = (appModule) => {
   appModule.config(($compileProvider, $httpProvider) => {
     /* less watchers from console debugging: https://docs.angularjs.org/guide/production */
     $compileProvider.debugInfoEnabled(false);

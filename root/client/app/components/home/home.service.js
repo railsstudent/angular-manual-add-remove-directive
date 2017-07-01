@@ -54,10 +54,6 @@ class HomeService {
   getLoaders() {
     return new Promise(resolve => resolve(this.loaders));
   }
-
-  static homeFactory(){
-    return new HomeService();
-  }
 }
 
 export { HomeService };

@@ -4,17 +4,17 @@ var webpack = require('webpack'),
   path = require('path'),
   DashboardPlugin = require('webpack-dashboard/plugin');
 
-var APP = path.resolve(__dirname , 'app');
+var APP = path.resolve(__dirname , 'client');
 module.exports = {
     // config goes here
-    context: APP,
+    //context: APP,
     debug: true,
     devtool: 'source-map',
     entry: {
         app: [
                 'babel-polyfill'
                 , 'webpack/hot/dev-server'
-                , './core/bootstrap.js'
+                  , './client/app/app.js'
               ]
     },
     plugins: [

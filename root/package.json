@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dashboard -- webpack-dev-server --content-base app --hot",
-    "prod": "NODE_ENV=production webpack-dashboard -- webpack-dev-server --config=webpack.config.js --content-base app"
+    "start": "webpack-dashboard -- webpack-dev-server --content-base client --hot",
+    "prod": "NODE_ENV=production webpack-dashboard -- webpack-dev-server --config=webpack.config.js --content-base client"
   },
   "author": "Connie Leung",
   "license": "ISC",
@@ -36,7 +36,8 @@
     "angular-route": "~1.5.8",
     "bootstrap": "~3.3.7",
     "font-awesome": "~4.6.3",
-    "jquery": "~3.1.0"
+    "jquery": "~3.1.0",
+    "lodash": "^4.17.4"
   },
   "repository": {
     "type": "svn",
