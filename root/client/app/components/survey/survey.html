@@ -1,6 +1,14 @@
 <div>
   <pre>
-
+    surveyForm.$pristine: {{ surveyForm.$pristine }}
+    surveyForm.$valid: {{ surveyForm.$valid }}
+    surveyForm.$invalid: {{ surveyForm.$invalid }}
+    surveyForm.$error: {{ surveyForm.$error  | json }}
   </pre>
-  Hello World
+
+  <form name="surveyForm" id="surveyForm" novalidate ng-submit="vm.createSurvey()">
+    <div id="inputWrapper"></div>
+    <button type="submit" class="btn btn-default" ng-disabled="surveyForm.$invalid">Submit</button>
+</form>
+
 </div>

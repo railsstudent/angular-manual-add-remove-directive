@@ -53,7 +53,9 @@ module.exports = {
         {
           test: /\.json$/,
           loader: 'json'
-        }
+        },
+        { test: /angular(\.min)?\.js$/, loader: "imports?$=jquery" },
+        { test: /jquery(\.min)?\.js$/, loader: 'expose-loader?$!expose-loader?jQuery' }
       ]
     },
     devServer: {

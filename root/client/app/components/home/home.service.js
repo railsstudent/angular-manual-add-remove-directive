@@ -1,4 +1,5 @@
 'use strict';
+import _ from 'lodash';
 
 class HomeService {
   constructor() {
@@ -8,14 +9,14 @@ class HomeService {
             { 'name': 'Template 1',
               'settings': {
                   'name': '',
-                  'hobby': 'Coding'
+                  'hobby': ''
               },
               'id' :'1'
             },
             { 'name': 'Template 2',
               'settings': {
                   'name': '',
-                  'bloodType': 'O Plus',
+                  'bloodType': '',
               },
               'id' :'2'
             },
@@ -23,7 +24,7 @@ class HomeService {
               'settings': {
                   'name': '',
                   'gender': 'Female',
-                  'favoriteColor': 'Purple'
+                  'favoriteColor': ''
               },
               'id' :'3'
             }
@@ -48,7 +49,7 @@ class HomeService {
                   'languages': '',
               },
               'id' :'5'
-          }
+            }
         ]
       }
     ];
@@ -56,6 +57,12 @@ class HomeService {
 
   getTypes() {
     return new Promise(resolve => resolve(this.types));
+  }
+
+  getSettings(settingId, name) {
+    const type = _.find(this.types, o => o.name === name);
+    const template = _.find(type.templates, t => t.id === settingId);
+    return new Promise(resolve => resolve(template.settings));
   }
 }
 

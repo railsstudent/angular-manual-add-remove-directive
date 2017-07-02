@@ -1,5 +1,9 @@
 'use strict';
 
+/* import jquery */
+// import $ from 'jquery';
+// window.JQuery = $;
+
 /* import angular */
 import angular from 'angular';
 

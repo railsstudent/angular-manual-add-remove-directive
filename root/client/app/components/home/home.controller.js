@@ -32,6 +32,7 @@ class HomeController {
 
   toggleTypes() {
     this.showTypes = !this.showTypes;
+    this.selectedType = this.selectedTemplate = null;
   }
 
   selectType(type) {

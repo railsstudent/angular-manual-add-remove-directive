@@ -1,59 +1,31 @@
 'use strict';
+import _ from 'lodash';
 
+let HomeService;
 class SurveyService {
-  constructor() {
-    this.technologies = [
-      {
-        'name' : 'Angular',
-        'link' : 'https://angularjs.org/'
-      },
-      {
-        'name' : 'Webpack',
-        'link' : 'https://webpack.github.io/'
-      },
-      {
-        'name' : 'RequireJs',
-        'link' : 'http://requirejs.org/'
-      },
-      {
-        'name' : 'Bootstrap 3',
-        'link' : 'http://getbootstrap.com/'
-      },
-      {
-        'name' : 'Fontawesome',
-        'link' : 'http://fontawesome.io/'
-      },
-      {
-        'name' : 'Webpack Dashboard',
-        'link' : 'https://github.com/FormidableLabs/webpack-dashboard'
-      }
-    ];
-
-    this.loaders = [
-      {
-        'name' : 'babel-loader',
-      },{
-        'name' : 'css-loader',
-      }, {
-        'name' : 'json-loader',
-      }, {
-        'name' : 'html-loader',
-      }, {
-        'name' : 'file-loader',
-      }, {
-        'name' : 'raw-loader',
-      }
-    ];
+  constructor(_HomeService) {
+    HomeService = _HomeService;
   }
 
-  getTechnologies() {
-    // use ES6 promise to return technologies
-    return new Promise(resolve => resolve(this.technologies));
-  }
-
-  getLoaders() {
-    return new Promise(resolve => resolve(this.loaders));
+  generateHtml(settingId, type) {
+    let str = '';
+    return new Promise(resolve => {
+      HomeService.getSettings(settingId, type)
+      .then(settings => {
+        _.forEach(settings, (v, k) => {
+          str += `<div class="form-group">`;
+          str += `<label for="${k}">${k}</label>`;
+          str += `<input type="text" name="${k}" id="${k}" required ng-model="vm.settings.${k}"></input>`;
+          str += `</div>`;
+          str += `<div ng-if="surveyForm.${k}.$invalid && !surveyForm.${k}.$pristine" ng-messages="surveyForm.${k}.$error" class="text-danger">`;
+          str += `<div ng-message="required">This field is required</div>`;
+          str += `</div>`;
+        });
+        return resolve(str);
+      });
+    });
   }
 }
+SurveyService.$inject = ['HomeService'];
 
 export { SurveyService };
