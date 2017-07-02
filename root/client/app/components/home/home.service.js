@@ -2,57 +2,60 @@
 
 class HomeService {
   constructor() {
-    this.technologies = [
-      {
-        'name' : 'Angular',
-        'link' : 'https://angularjs.org/'
+    this.types = [
+      { 'name': 'type 1',
+        'templates': [
+            { 'name': 'Template 1',
+              'settings': {
+                  'name': '',
+                  'hobby': 'Coding'
+              },
+              'id' :'1'
+            },
+            { 'name': 'Template 2',
+              'settings': {
+                  'name': '',
+                  'bloodType': 'O Plus',
+              },
+              'id' :'2'
+            },
+            { 'name': 'Template 3',
+              'settings': {
+                  'name': '',
+                  'gender': 'Female',
+                  'favoriteColor': 'Purple'
+              },
+              'id' :'3'
+            }
+        ]
       },
-      {
-        'name' : 'Webpack',
-        'link' : 'https://webpack.github.io/'
+      { 'name': 'type 2',
+        'templates': [
+            { 'name': 'Template 4',
+              'settings': {
+                  'name': '',
+                  'nationality': ''
+              },
+              'id' :'4'
+            }
+        ]
       },
-      {
-        'name' : 'RequireJs',
-        'link' : 'http://requirejs.org/'
-      },
-      {
-        'name' : 'Bootstrap 3',
-        'link' : 'http://getbootstrap.com/'
-      },
-      {
-        'name' : 'Fontawesome',
-        'link' : 'http://fontawesome.io/'
-      },
-      {
-        'name' : 'Webpack Dashboard',
-        'link' : 'https://github.com/FormidableLabs/webpack-dashboard'
-      }
-    ];
-
-    this.loaders = [
-      {
-        'name' : 'babel-loader',
-      },{
-        'name' : 'css-loader',
-      }, {
-        'name' : 'json-loader',
-      }, {
-        'name' : 'html-loader',
-      }, {
-        'name' : 'file-loader',
-      }, {
-        'name' : 'raw-loader',
+      { 'name': 'type 3',
+        'templates': [
+            { 'name': 'Template 5',
+              'settings': {
+                  'name': '',
+                  'languages': '',
+              },
+              'id' :'5'
+          }
+        ]
       }
     ];
   }
 
-  getTechnologies() {
-    // use ES6 promise to return technologies
-    return new Promise(resolve => resolve(this.technologies));
-  }
-
-  getLoaders() {
-    return new Promise(resolve => resolve(this.loaders));
+  getTypes() {
+    return new Promise(resolve => resolve(this.types));
   }
 }
 
