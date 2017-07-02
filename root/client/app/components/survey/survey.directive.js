@@ -14,7 +14,7 @@ export const surveyDirective = ($compile, SurveyService) => {
         $compile(inputWrapper.contents())(scope);
         console.log(scope.surveyForm);
     });
-  }
+  };
 
   return {
     template,
@@ -37,23 +37,14 @@ export const surveyDirective = ($compile, SurveyService) => {
       scope.template = attrs.template;
 
       scope.$watchCollection(() => [scope.vm.settingId, scope.vm.type], (n, o) => {
-        const [ settingId = "", type = ""] = n;
-        console.log("watcher fired");
+        const [ settingId = '', type = ''] = n;
+        console.log('watcher fired');
 
         compileTemplate(scope, element, settingId, type);
         if (attrs.state === 'CREATE_SURVEY') {
           scope.vm.initNewSurveyModel();
         }
       });
-
-      /*SurveyService.generateHtml(attrs.settingId, attrs.type).
-      then (str => {
-          const inputWrapper = element.find('#inputWrapper');
-          inputWrapper.empty();
-          inputWrapper.html(str).show();
-          const fieldElement = $compile(inputWrapper.contents())(scope);
-          console.log(fieldElement);
-      });*/
     }
   };
 };
