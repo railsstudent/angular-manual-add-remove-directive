@@ -12,7 +12,7 @@
   </div>
   <div ng-if="vm.showTypes && !vm.selectedTemplate">
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12"
+      <div class="col-md-12 col-sm-12 col-lg-12">
           Select a template to display create form
       </div>
     </div>
@@ -29,6 +29,12 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12 new-survey-placeholder">
+      <survey state="CREATE_SURVEY" setting-id="{{vm.selectedTemplate.id}}" type="{{vm.selectedType.name}}"
+          template="{{vm.selectedTemplate.name}}" ng-if="vm.selectedType && vm.selectedTemplate" ></survey>
     </div>
   </div>
 </div>

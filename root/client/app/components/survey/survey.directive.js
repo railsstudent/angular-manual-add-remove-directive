@@ -9,7 +9,15 @@ export const surveyDirective = () => {
     controllerAs: 'vm',
     bindToController: true,
     restrict: 'E',
-    scope: {},
-    replace: true
+    scope: {
+      state: "@",
+      settingId: "@",
+      "type": "@",
+      "template": "@"
+    },
+    replace: true,
+    link: (scope, element, attrs) => {
+      console.log(attrs);
+    }
   };
 };

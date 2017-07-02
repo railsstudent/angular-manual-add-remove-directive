@@ -42,7 +42,7 @@ class HomeController {
 
   selectTemplate(template) {
     this.selectedTemplate = template;
-    console.log(this.selectedTemplate);
+    console.log({ selectTemplate: this.selectedTemplate });
   }
 }
 HomeController.$inject = ['$scope', 'HomeService', '$timeout'];
